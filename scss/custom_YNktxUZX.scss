@@ -1,0 +1,555 @@
+/* 
+Compile this file to css/custom_YNktxUZX.css using any SCSS preprocessor. 
+More information here: https://slides.gitbook.io/manual/scss
+*/
+
+@import "mixins.scss"; 
+$dark: #132d21;
+$buttonColor: #202020;
+$black: #202020;
+$red: #f43636;
+$white: #ffffff;
+$customGreenColor: #132d2a;
+$customGreenColor-2: #2a423f;
+$customGrayColor: #e9e9e9;
+$customGrayColor-2: #e7eaea;
+
+@import "variables.scss";
+/* Background && Buttons Colors: */
+
+/* Text Colors: */
+
+
+/* Panel Top 04 */
+.panel.top{
+ padding-bottom: 0;
+ padding-top: 0;
+}	
+.menuLine{
+  	opacity: 0;
+    max-width: 30px;
+    border-bottom: 1px solid teal !important;
+    margin: auto;
+    padding-top: 34px;
+    transition: all 0.15s;
+	}
+  .panel .sections .menu li a{
+    opacity: 1 !important; 
+		
+	}
+   .panel.top .sections .menu li{
+     padding-top: 35px;
+     margin: 0 20px;
+  &:hover, &:active, &:focus{
+    
+    text-shadow: 0 0 .6px teal, 0 0 .6px teal;
+    color: teal !important;
+    transition: all 0.15s !important;
+    .menuLine{
+     opacity: 1 !important;
+      transition: all 0.5s;
+    }
+  }
+}
+
+/* First Screen (#1) */
+.slide[data-cid="slide-14-c08ec5a8"]{
+  a{
+   max-width: 125px;
+   padding: 14px 20px !important;
+  }
+  .button.stroke.small{
+   border: 2px solid !important;
+    padding: 12px 20px !important;
+  }
+  @media(max-width: $phablet){
+    a{
+     min-width: 128px;
+     padding: 14px 20px !important;
+    }
+    .button.stroke.small{
+     border: 2px solid !important;
+     padding: 12px 20px !important;
+    }
+  }
+}
+
+/* Services (#2) */
+/* To restrict styles to the current slide, panel, or example use .slide[data-cid="slide-49-f307afd3"] */
+.slide[data-cid="slide-49-f307afd3"]{
+  .flex-49 .material-icons {
+    margin-bottom: 10px;
+    margin-top: 15px;
+    font-size: 72px;
+  }
+	.scheduleLine{
+   border-bottom: 1px solid $customGreenColor-2;
+   box-sizing: border-box;
+  }
+  .customBlock{
+  	padding: 69px;
+  	background-color: $customGreenColor;
+    color: white !important;
+    margin-top: -118px;
+  }
+  .phoneNumber{
+  	padding-left: 34px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $customGreenColor-2;
+    max-width: 275px;
+  }
+  .phoneIcon{
+  	position: absolute;
+    bottom: 17px;
+    left: 0;
+  }
+  @media (min-width: $tablet){
+h3, .h3 {
+  font-size: 32px;
+    }
+  }
+    @media (max-width: $tablet){
+    .fix-3-12{
+      max-width: 1180px !important;
+    }
+      .phoneIcon{
+    width: 24px !important;
+        }
+  }
+      @media (max-width: 1277px){
+h3, .h3 {
+  font-size: 30px;
+    }
+  }
+  @media (min-width: $tablet){
+    @media (max-width: 1260px){
+h3, .h3 {
+  font-size: 23px;
+    }
+        .phoneIcon{
+    width: 19px;
+          bottom: 15px;
+        }
+    }
+  }
+    @media(max-width: 600px){
+    .customBlock{
+  		padding: 30px;
+  	} 
+    h3, .h3 {
+  		font-size: 18px !important;
+    }
+    .phoneIcon{
+    	width: 18px !important;
+      bottom: 13px;
+    }
+  }
+.customMarginBottom{
+  margin-bottom: 6px !important;
+  }
+  a.button.teal:hover{
+    span{
+    color: teal !important;
+    transition: all .25s;
+    }
+  }
+}
+
+/* About Us Slider (#3) */
+[data-cid="example-xr1z9XYi-f935178d"]{
+  .controller li.selected{
+    a{
+      background-color: teal !important;
+      color: white !important;
+    }
+  }
+    .inner-165{
+    border-radius: 0;
+  }
+  .video-165{
+    border-radius: 0;
+  }
+  .img-165, .videoThumbnail-165{
+    height:100%;
+  }
+  .img-165{
+    max-width:unset;
+  }
+  .box-165{
+    .button{
+      border-radius: 0;
+      border: 1px solid $customGrayColor-2;
+      width: 160px;
+    }
+    &:before{
+      content:'';
+      position: absolute;
+      left:0;
+      right:0;
+      top: 50%;
+      border-bottom: 1px solid $customGrayColor-2;
+    }
+    @include media(618px, max) {
+      &:before{
+        border-bottom: none;
+      	border-right: none !important;
+      }   
+    }
+  }
+    .customFirstElement{
+     margin-right: 80px !important;
+     margin-left: 0 !important;
+    }
+    .customLastElement{
+     margin-right: 0 !important;
+     margin-left: 80px !important;
+    }
+  	.customMiddleElement{
+     margin-right: 80px !important;
+     margin-left: 80px !important;
+  	}
+  @media(max-width: 1405px){
+    .customFirstElement{
+     margin-right: 60px !important;
+    }
+    .customMiddleElement{
+     margin-right: 60px !important;
+     margin-left: 60px !important;
+    }
+    .customLastElement{
+     margin-left: 60px !important; 
+    }
+  }
+    @media(max-width: 1265px){
+    .customFirstElement{
+     margin-right: 40px !important;
+    }
+    .customMiddleElement{
+     margin-right: 40px !important;
+     margin-left: 40px !important;
+    }
+    .customLastElement{
+     margin-left: 40px !important; 
+    }
+  }
+    @media(max-width: 1120px){
+    .customFirstElement{
+     margin-right: 20px !important;
+    }
+    .customMiddleElement{
+     margin-right: 20px !important;
+     margin-left: 20px !important;
+    }
+    .customLastElement{
+     margin-left: 20px !important; 
+    }
+  }
+    @media(max-width: 976px){
+    .customFirstElement{
+     margin-right: 10px !important;
+    }
+    .customMiddleElement{
+     margin-right: 10px !important;
+     margin-left: 10px !important;
+    }
+    .customLastElement{
+     margin-left: 10px !important; 
+    }
+    .customPadding-4{
+    	padding: 40px !important;  
+    }
+  }
+      @media(max-width: 905px){
+    .customFirstElement{
+      width: 100px !important;
+    }
+    .customMiddleElement{
+      width: 100px !important;
+    }
+    .customLastElement{
+      width: 100px !important;
+    }
+  }
+        @media(max-width: 618px){
+    .customFirstElement{
+     	margin-right: 0 !important;
+      display: block !important;
+      width: 100px !important;
+    }
+    .customMiddleElement{
+     	margin-right: 0 !important;
+     	margin-left: 0 !important;
+      display: block !important;
+      width: 100px !important;
+    }
+    .customLastElement{
+     	margin-left: 0 !important; 
+      display: block !important;
+      width: 100px !important;
+    }
+  }
+      @media(max-width: 546px){
+        .controller li{
+         margin-bottom: 10px; 
+        }
+    .customFirstElement{
+     margin-right: 40px !important;
+    }
+    .customMiddleElement{
+     margin-right: 40px !important;
+    }
+  }
+        @media(max-width: 392px){
+    .customFirstElement{
+     margin-right: 5px !important;
+    }
+    .customMiddleElement{
+     margin-right: 5px !important;
+    }
+  }
+}
+
+/* Practitioners (#4) */
+/* To restrict styles to the current slide, panel, or example use .slide[data-cid="slide-164-252ea515"] */
+.slide[data-cid="slide-164-252ea515"]{
+  .box-164{
+    border-radius: 0;
+  }
+  .controller-164{
+    position: absolute;
+    top:50px;
+    right: 50px;
+    background: $customGreenColor;
+    li{
+      padding:0;
+      height: 4px;
+      width: 4px;
+      border-radius: 50%;
+      background: $default-white-color;
+      opacity: .2;
+      margin: 0 5px;
+      vertical-align:middle;
+      transition: .15s;
+      &.selected, &:hover{
+        transform:scale(1.66);
+      }
+      &.selected{
+        background: teal;
+        opacity: 1;
+      }
+      &:after{
+        display: none;
+      }
+    }
+    @include media($tablet, max) {
+      top: 40px;
+      right: 30px;
+    }
+    @include media($phablet, max) {
+      top:100%;
+      right:0;
+      left:0;
+      line-height:80px;
+    }
+  }
+  .next-164, .prev-164{
+    height: 152px;
+    width: 152px;
+    z-index:10;
+    transition: .15s;
+    
+    &:hover{
+      background: teal;
+    }
+        @include media(936px, max) {
+      height: 100px;
+      width: 100px;
+    }
+    @include media(800px, max) {
+      height: 70px;
+      width: 70px;
+    }
+  }
+  .prev-164{
+    border-radius: 0;
+    @include media($phablet, max) {
+      bottom:auto !important;
+      right:auto !important;
+      top:100%;
+      left:0; 
+      border-radius: 0;
+    }
+  }
+  .next-164{
+    border-radius: 0;
+    @include media($phablet, max) {
+      bottom:auto !important;
+      left:auto !important;
+      top:0;
+      right:0; 
+      border-radius: 0;
+      
+    }
+  }
+  .slider-164 img{
+    @include media($phablet, min) {
+      border-bottom-left-radius: 0 !important;
+    }
+    @include media($phablet, max) {
+      border-top-left-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+    }
+  }
+    a.button.teal:hover{
+    span{
+    color: teal !important;
+    transition: all .25s;
+    }
+  }
+}
+
+/* Recent Studies (#5) */
+
+/* To restrict styles to the current slide, panel, or example use .slide[data-cid="slide-167-b3528641"] */
+.slide[data-cid="slide-167-b3528641"]{
+  .btn-167{
+    height: 80px;
+    width: 80px;
+    transition:.15s;
+    &:hover, &:active, &:focus{
+      background: teal;
+      .customArrowLeft{
+      	fill: white;
+      }
+      .customArrowRight{
+        fill: white;
+      }
+    }
+    &.swiper-button-disabled{
+      opacity:0.6;
+      pointer-events:none;
+    }
+  }
+  .swiper-167{
+    margin:0 -10px !important;
+  }
+  .box-167{
+    height: 550px !important;
+    box-shadow: none !important;
+    border: 1px solid $customGrayColor-2;
+    &:hover{
+      background: $customGreenColor !important;
+      .details-167{
+        opacity:1;
+        transform: translateY(0px);
+        background: $customGreenColor !important;
+        color: white !important;
+      }
+      .poster-167{
+          height: 0 !important;
+          opacity:0;
+        background: $customGreenColor !important;
+      }
+      .date-167{
+        transform: translateY(100%);
+      }
+      .text-167{
+       background: $customGreenColor !important;
+        color: white !important;
+      }
+    }
+  }
+  .poster-167{
+      height:313px;
+      transition: none;
+  }
+  .details-167{
+    opacity:0;
+    transform: translateY(-100%);  
+    transition: none;
+    z-index:2;
+    &:after{
+      content:"";
+      display:block;
+      position:absolute;
+      left:0;
+      right:0;
+      top:100%;
+      height:30px;
+      background: $customGreenColor !important;
+    }
+  }
+  .text-167{
+    position: absolute;
+    top:313px;
+    left:0px;
+    right:0;
+    transition: none;
+    z-index:1;
+    color: $customGreenColor !important;
+  }
+  .date-167{
+    transition: none;
+    z-index:2;
+    color: $customGreenColor !important;
+    &:before{
+      content:"";
+      display:block;
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:100%;
+      height:0;
+      background: white;
+    }
+  }
+  a.button.teal:hover{
+    span{
+      color: teal !important;
+      transition: all .25s;
+    }
+  }
+}
+
+/* Last Screen (#6) */
+/* To restrict styles to the current slide, panel, or example use .slide[data-cid="slide-172-e25f382d"] */
+.slide[data-cid="slide-172-e25f382d"]{
+  .btn-172{
+    line-height: 80px;
+    width: 80px;
+    @include media($tablet, max) {
+      line-height: 60px;
+      width: 60px;
+    }
+  }
+  .line-172{
+    height:calc(100% - 120px);
+    width:1px;
+    background: rgba($default-white-color, .3);
+  }
+  &.whiteSlide .line-172{
+    background:rgba($default-text-color, .1);
+  }
+	p.weight-6{
+   padding-left: 34px; 
+  }
+    .customIcon{
+    position: absolute;
+   left: 0;
+   top: 1px;
+  }
+  @media(min-width: $phablet){
+   @media(max-width: 955px){
+     .button.stroke{
+      min-width: 188.03px;
+      margin-top: 15px;
+     }
+    }
+  }
+     @media(max-width: 500px){
+     .button.stroke{
+      min-width: 188.03px;
+      margin-top: 15px;
+     }
+  }
+}

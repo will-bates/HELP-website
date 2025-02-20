@@ -1,0 +1,146 @@
+// Flex Grid
+// .flex and .inlineFlex has a display:flex|inline-flex property - check useful-classes.scss
+
+// default spaces
+ul[class*='flex'], ul[class*='inlineFlex'], [class*='flex'].defaultSpaces, [class*='inlineFlex'].defaultSpaces{
+  margin-left:-2%;
+  margin-right:-2%;
+}
+
+[class*='flex'], [class*='inlineFlex'] {
+  // spaces
+  & >[class*='col-'] { // default
+    padding-left:2%; 
+    padding-right:2%;
+  }
+
+  &.fixedSpaces {
+    $gapSpace: $grid-gap/2;
+
+    margin-left: -$gapSpace;
+    margin-right: -$gapSpace;
+
+    >[class*='col-'] {
+      padding-left: $gapSpace;
+      padding-right: $gapSpace;
+    }
+  }
+
+  &.noSpaces {
+    margin-left:0;
+    margin-right:0;
+
+    >[class*='col-'] {
+      padding-left:0;
+      padding-right:0;
+    }
+  }
+
+  // alignments
+  &.verticalStart {align-items: flex-start;}
+  &.verticalCenter {align-items: center;}
+  &.verticalEnd {align-items: flex-end;}
+  &.verticalBaseline {align-items: baseline;}
+  &.verticalStretch {align-items: stretch;}
+  
+  &.horizontalStart {justify-content: flex-start;}
+  &.horizontalCenter {justify-content: center;}
+  &.horizontalEnd {justify-content: flex-end;}
+  &.horizontalBetween {justify-content: space-between;}
+  &.horizontalAround {justify-content: space-around;}
+  &.horizontalEvenly {justify-content: space-evenly;}
+  
+  &.dirRow {flex-direction:row;}
+  &.dirRowReverse {flex-direction:row-reverse;}
+  &.dirColumn {flex-direction:column;}
+  &.dirColumnReverse {flex-direction:column-reverse;}
+  &.reverse {flex-wrap:wrap-reverse !important;}
+
+  &.bottom [class*='col-'],
+  &.reverse.top [class*='col-']{
+    align-self: flex-end;
+  }
+    
+  &.top [class*='col-'],
+  &.reverse.bottom [class*='col-'] {
+    align-self: flex-start;
+  }
+
+  // generate colums
+  // .col-1-12 { width: 8.33333%; }
+  // .col-1-10 { width: 10%; }
+
+  $cols-in-row: 10, 12;
+  @each $cols in $cols-in-row {
+    @for $i from 1 through $cols {
+      $width: (100% / $cols) * $i;
+      > .col-#{$i}-#{$cols} {
+        width: $width;
+      }
+      // Laptop
+      @include media($desktop, "max") {
+        > .col-laptop-#{$i}-#{$cols} {
+          width: $width;
+        }
+      }
+    }
+  }
+
+  /* ipad landscape and > */
+  @include media($tablet, "max") {
+    &:not(.later) > [class*='col-']:not([class*='col-phablet-']):not([class*='col-phone-']) { width: 100%; }
+    > .col-tablet-1-1 { width: 100% !important; }
+    > .col-tablet-1-2 { width: 50% !important; }
+    > .col-tablet-1-3 { width: 33.33333333% !important; }
+    > .col-tablet-2-3 { width: 66.66666666% !important; }
+    > .col-tablet-1-4 { width: 25% !important; }
+    > .col-tablet-3-4 { width: 75% !important; }
+    > .col-tablet-1-5 { width: 20% !important; }
+    > .col-tablet-2-5 { width: 40% !important; }
+    > .col-tablet-3-5 { width: 60% !important; }
+    > .col-tablet-4-5 { width: 80% !important; }
+  }
+
+  /* phablet landscape and ipad portrait and > */
+  @include media($phablet, "max") {
+    &.later > [class*='col-']:not([class*='col-phone-']) { width: 100%; }
+    > .col-phablet-1-1 { width: 100% !important; }
+    > .col-phablet-1-2 { width: 50% !important; }
+    > .col-phablet-1-3 { width: 33.33333333% !important; }
+    > .col-phablet-2-3 { width: 66.66666666% !important; }
+    > .col-phablet-1-4 { width: 25% !important; }
+    > .col-phablet-3-4 { width: 75% !important; }
+  }
+
+  /* phone portrait and > */
+  @include media($phone, "max") {
+    > [class*='col-'] { width: 100%; }
+    > .col-phone-1-1 { width: 100% !important; }
+    > .col-phone-1-2 { width: 50% !important; }
+    > .col-phone-1-3 { width: 33.33333333% !important; }
+    > .col-phone-2-3 { width: 66.66666666% !important; }
+  }
+
+  // responsive alignments
+  $breakpoints: ("laptop":$desktop,"tablet":$tablet,"phablet":$phablet,"phone":$phone);
+  @each $name, $value in $breakpoints {
+    @include media($value, max){
+      &.verticalStart-#{$name} {align-items: flex-start;}
+      &.verticalCenter-#{$name} {align-items: center;}
+      &.verticalEnd-#{$name} {align-items: flex-end;}
+      &.verticalBaseline-#{$name} {align-items: baseline;}
+      &.verticalStretch-#{$name} {align-items: stretch;}
+      &.horizontalStart-#{$name} {justify-content: flex-start;}
+      &.horizontalCenter-#{$name} {justify-content: center;}
+      &.horizontalEnd-#{$name} {justify-content: flex-end;}
+      &.horizontalBetween-#{$name} {justify-content: space-between;}
+      &.horizontalAround-#{$name} {justify-content: space-around;}
+      &.horizontalEvenly-#{$name} {justify-content: space-evenly;}
+      &.dirRow-#{$name} {flex-direction:row;}
+      &.dirRowReverse-#{$name} {flex-direction:row-reverse;}
+      &.dirColumn-#{$name} {flex-direction:column;}
+      &.dirColumnReverse-#{$name} {flex-direction:column-reverse;}
+      &.reverse-#{$name} {flex-wrap:wrap-reverse !important;}
+    }
+  }
+}

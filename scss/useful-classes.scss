@@ -1,0 +1,271 @@
+/* Re-usable stuff */
+// slides specific
+.slides.firstSlide .hideForFirstSlide,
+.slides.lastSlide .hideForLastSlide {
+  display: none;
+}
+
+// tables
+.table { display: table; width: 100%; height: 100%; }
+.cell { display: table-cell; text-align: center; vertical-align: middle; }
+
+// overflow
+.scroll-x { overflow-x: scroll;}
+.scroll-y { overflow-y: scroll;}
+.overflow-hidden, .scroll-hidden { overflow: hidden;}
+.overflow-reset { overflow: auto !important;}
+.overflow-visible { overflow: visible !important;}
+
+// fonts
+.rtl { direction: rtl; unicode-bidi: embed;}
+.noText { font-size: 0; }
+.noBr, .nobr, .nowrap { white-space: nowrap; }
+.wrap-white-space { white-space: initial; }
+
+// styling
+.noBorder { border: none !important; }
+.noShadow { box-shadow: none !important; }
+.noHoverShadow:hover, .noShadowHover:hover { box-shadow: none !important; }
+.outline-none { outline: none !important; }
+
+// text-alignment
+.align-left, .left { text-align: left !important;}
+.align-right, .right { text-align: right !important;}
+.align-center, .center { text-align: center !important;}
+.align-justify, .justify { text-align: justify !important;}
+
+// position
+.static { position: static !important;}
+.relative { position: relative !important;}
+.absolute { position: absolute !important;}
+.fixed { position: fixed !important; z-index:150;}
+.sticky { position: sticky !important; top:0; z-index:150;}
+// positioning to the edges
+.position-left { left: 0; }
+.position-top { top: 0; }
+.position-bottom { bottom: 0; }
+.position-right { right: 0; }
+// vertical align
+.align-top, .top { vertical-align: top !important;}
+.align-middle, .middle { vertical-align: middle !important;}
+.align-bottom, .bottom { vertical-align: bottom !important;}
+// self-alignment (works inside flex only)
+.selfStart { align-self: flex-start !important;}
+.selfCenter { align-self: center !important;}
+.selfEnd { align-self: flex-end !important;}
+.selfBaseline { align-self: baseline !important;}
+.selfStretch { align-self: stretch !important;}
+// floats
+.float-right { float: right !important;}
+.float-left { float: left !important;}
+.float-none { float: none !important;}
+// clearfix
+.clearBoth:after { content: ""; clear: both; display: table;}
+
+// move a bit
+[class*='shift-'] {
+  position: relative;
+}
+
+.shift-up-1 { top: -1px!important;}
+.shift-up-2 { top: -2px!important;}
+.shift-up-3 { top: -3px!important;}
+.shift-up-4 { top: -4px!important;}
+.shift-up-5 { top: -5px!important;}
+.shift-down-1 { top: 1px!important;}
+.shift-down-2 { top: 2px!important;}
+.shift-down-3 { top: 3px!important;}
+.shift-down-4 { top: 4px!important;}
+.shift-down-5 { top: 5px!important;}
+.shift-left-1 { left: -1px!important;}
+.shift-left-2 { left: -2px!important;}
+.shift-left-3 { left: -3px!important;}
+.shift-left-4 { left: -4px!important;}
+.shift-left-5 { left: -5px!important;}
+.shift-right-1 { left: 1px!important;}
+.shift-right-2 { left: 2px!important;}
+.shift-right-3 { left: 3px!important;}
+.shift-right-4 { left: 4px!important;}
+.shift-right-5 { left: 5px!important;}
+
+//roundness
+.round { border-radius: 999px !important; }
+.rounded { border-radius: $rounded-border-radius !important; }
+.rectangular { border-radius: 0 !important; }
+//exact border-radius
+$radius: 1;
+@while $radius <= 25 {
+  .radius-#{$radius}{
+    border-radius: 1px * $radius !important;
+  }
+  $radius: $radius + 1;
+}
+
+// opacity
+.opacity-0 { opacity: 0 !important;}
+.opacity-1 { opacity: 0.1 !important;}
+.opacity-2 { opacity: 0.2 !important;}
+.opacity-3 { opacity: 0.3 !important;}
+.opacity-4 { opacity: 0.4 !important;}
+.opacity-5 { opacity: 0.5 !important;}
+.opacity-6 { opacity: 0.6 !important;}
+.opacity-7 { opacity: 0.7 !important;}
+.opacity-8 { opacity: 0.8 !important;}
+.opacity-9 { opacity: 0.9 !important;}
+.opacity-10,
+.opaque    { opacity: 1 !important;}
+
+// Crop
+.crop { margin: 0 !important;}
+.cropBottom { margin-bottom: 0 !important;}
+.cropTop { margin-top: 0 !important;}
+.cropLeft, .cropSides { margin-left: 0 !important;}
+.cropRight, .cropSides { margin-right: 0 !important;}
+
+// Trim
+.trim { padding: 0 !important;}
+.trimBottom { padding-bottom: 0 !important;}
+.trimTop { padding-top: 0 !important;}
+.trimLeft, .trimSides { padding-left: 0 !important;}
+.trimRight, .trimSides { padding-right: 0 !important;}
+
+// width
+.slides .wide { width: 100% !important;}
+.fullWidth {
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  border-radius: 0 !important;
+}
+
+// display
+// There are also much more options for .flex and .inlineFlex classes. Check flex.scss file.
+.flex {display:flex !important; flex-wrap:wrap !important;}
+.inlineFlex {display:inline-flex !important; flex-wrap:wrap !important;}
+.block { display: block !important;}
+.inlineBlock { display: inline-block !important;}
+.inline { display: inline !important;}
+.hidden { display: none !important; }
+
+//Padding and Margin Generation
+$properties: padding padding-top padding-right padding-bottom padding-left margin margin-top margin-right margin-bottom margin-left;
+@each $property in $properties {
+  @for $n from 0 through 20 {
+    $value: 10px * $n;
+    .#{$property}-#{$n} {
+      #{$property}: $value !important;
+    }
+  }
+  .#{$property}-auto {
+    #{$property}: auto !important;
+  }
+}
+
+//Padding and Margin for Desktop
+@include media($desktop, min){
+  @each $property in $properties {
+    @for $n from 0 through 20 {
+      $value: 10px * $n;
+      .#{$property}-desktop-#{$n} {
+        #{$property}: $value !important;
+      }
+    }
+    .#{$property}-desktop-auto {
+      #{$property}: auto !important;
+    }
+  }
+}
+
+// responsive classes
+$breakpoints: ("laptop":$desktop,"tablet":$tablet,"phablet":$phablet,"phone":$phone);
+@each $name, $value in $breakpoints {
+  @include media($value, max){
+    // display
+    // There are also much more options for .flex and .inlineFlex classes. Check flex.scss file.
+    .flex-#{$name} {display:flex !important; flex-wrap:wrap !important;}
+    .inlineFlex-#{$name} {display:inline-flex !important; flex-wrap:wrap !important;}
+    .block-#{$name} { display: block !important;}
+    .inlineBlock-#{$name} { display: inline-block !important;}
+    .inline-#{$name} { display: inline !important;}
+    .hidden-#{$name} { display: none !important; }
+    // Margins && Paddings
+    @each $property in $properties {
+      @for $n from 0 through 20 {
+        $value: 10px * $n;
+        .#{$property}-#{$name}-#{$n} {
+          #{$property}: $value !important;
+        }
+      }
+      .#{$property}-#{$name}-auto {
+        #{$property}: auto !important;
+      }
+    }
+    // wide
+    .wide-#{$name} {
+      width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      max-width: 100% !important;
+    }
+    // position
+    .static-#{$name} { position: static !important;}
+    .relative-#{$name} { position: relative !important;}
+    .absolute-#{$name} { position: absolute !important;}
+    .fixed-#{$name} { position: fixed !important; z-index:150;}
+    .sticky-#{$name} { position: sticky !important; top:0; z-index:150;}
+    // align text
+    .align-left-#{$name} { text-align: left !important;}
+    .align-right-#{$name} { text-align: right !important;}
+    .align-center-#{$name} { text-align: center !important;}
+    // align vertically
+    .align-top-#{$name} { vertical-align: top !important;}
+    .align-middle-#{$name} { vertical-align: middle !important;}
+    .align-bottom-#{$name} { vertical-align: bottom !important;}
+    // self-alignment (works inside flex only)
+    .selfStart-#{$name} { align-self: flex-start !important;}
+    .selfCenter-#{$name} { align-self: center !important;}
+    .selfEnd-#{$name} { align-self: flex-end !important;}
+    .selfBaseline-#{$name} { align-self: baseline !important;}
+    .selfStretch-#{$name} { align-self: stretch !important;}
+  }
+}
+
+// cursor behaviour
+.pointer-events { pointer-events: all !important;}
+.disable-pointer-events { pointer-events: none !important;}
+
+.pointer,
+.cursorPointer { cursor: pointer !important;}
+.cursorZoomIn {
+	cursor:  pointer;
+	cursor:  -moz-zoom-in !important;
+	cursor:  -webkit-zoom-in !important;
+}
+.cursorZoomOut {
+	cursor:  pointer;
+	cursor:  -moz-zoom-out !important;
+	cursor:  -webkit-zoom-out !important;
+}
+.cursorGrab {
+	cursor: move; 
+	cursor: grab !important;
+	cursor: -moz-grab !important;
+	cursor: -webkit-grab !important;
+}
+
+.cursorGrab:active {
+	cursor: grabbing !important;
+	cursor: -moz-grabbing !important;
+	cursor: -webkit-grabbing !important;
+}
+
+.disableClick { pointer-events: none;}
+.noSelect,.noSelect *, .disableSelect, .disableSelect * { -webkit-touch-callout: none!important; user-select: none!important;}
+.selectable,.selectable *, .enableSelect, .enableSelect * { -webkit-touch-callout: auto!important; user-select: auto!important;}
+
+// background
+.pattern .background { background-repeat: repeat; background-size: auto;}
+.attachment-fixed, .attachmentFixed { background-attachment: fixed !important; background-size: cover !important;}
+.cover { background-size: cover !important;}
+.transparent { background: transparent !important }
+.background-repeat{background-repeat: repeat !important;}
+.background-no-repeat{background-repeat: no-repeat !important;}
